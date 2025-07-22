@@ -1,0 +1,43 @@
+.inward-effect {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.inward-effect:hover {
+  transform: scale(0.97) rotateX(3deg) rotateY(3deg);
+  box-shadow: inset 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Image stays flat but adds depth */
+.inward-effect img {
+  height: 250px;
+  object-fit: cover;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+/* Slight zoom out on hover to create inward feeling */
+.inward-effect:hover img {
+  transform: scale(0.95);
+}
+
+/* Optional: Dark overlay for depth illusion */
+.inward-effect::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.15) 0%, transparent 80%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.inward-effect:hover::before {
+  opacity: 1;
+}

@@ -1,0 +1,39 @@
+/* Optional: extra spacing or adjustments */
+.about-section img {
+  object-fit: cover;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .about-section img {
+    margin-bottom: 20px;
+  }
+}
+
+/* Add any needed spacing or fine-tuning */
+.about-page img {
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.about-page h1, h2, h3 {
+  color: #1a1a1a;
+}
+
+.blockquote {
+  background-color: #f8f9fa;
+  border-left: 4px solid #333;
+  padding: 1rem;
+  border-radius: 6px;
+}
+/* Optional: Zoom on hover for images */
+.hover-zoom:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+}
+
+.btn-hover-scale:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+}
+
