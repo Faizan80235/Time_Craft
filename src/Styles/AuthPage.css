@@ -1,0 +1,188 @@
+/* 1. Reset & Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+*,
+*::before,
+*::after {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins", sans-serif;
+}
+
+/* 2. Body & Background Gradient */
+body {
+  min-height:100vh;
+  background: linear-gradient(135deg, #f0f4f8, #e3ebf4);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position: relative;
+}
+
+/* 3. Floating Color Blobs */
+.blob {
+  position: absolute;
+  border-radius:50%;
+  filter: blur(120px);
+  opacity:0.7;
+  animation: blobMove 15s infinite;
+}
+.blob:nth-child(1){background:#FFD700; width:400px; height:400px; top:-150px; left:-150px;}
+.blob:nth-child(2){background:#0d6efd; width:300px; height:300px; bottom:-120px; right:-200px;}
+.blob:nth-child(3){background:#dc3545; width:350px; height:350px; top:10%; right:30%;}
+@keyframes blobMove {
+  0%,100% {transform: translate(0,0) scale(1);}
+  50% {transform: translate(20px, -20px) scale(1.1);}
+}
+
+/* 4. Wrapper Layout */
+.auth-page {
+  display:flex;
+  width:100%;
+  max-width:1400px;
+  margin:2rem;
+  border-radius:20px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.1);
+  overflow:hidden;
+  background-color:#ffffff88;
+  backdrop-filter: blur(30px);
+}
+
+/* 5. Left Side Image */
+.auth-image {
+  flex:1;
+  position:relative;
+}
+.auth-image::after {
+  content:"";
+  background:url("https://images.unsplash.com/photo-1600180758890-3b3c6b71d3de?auto=format&fit=crop&w=1350&q=80") center/cover no-repeat;
+  position:absolute; inset:0; opacity:1;
+}
+.auth-image { display:none; }
+@media(min-width:768px){
+  .auth-image { display:block; flex:1; }
+}
+
+/* 6. Right Side Form */
+.auth-form {
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:3rem;
+}
+
+/* 7. Glass Card */
+.auth-card {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius:16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  padding:4rem;
+  width:100%;
+  max-width:460px;
+  position:relative;
+  animation: fadeInUp 0.8s ease;
+}
+@keyframes fadeInUp {
+  from {opacity:0; transform: translateY(30px);}
+  to {opacity:1; transform: translateY(0);}
+}
+
+/* 8. Form Title & Subtitle */
+.auth-card h2 {
+  font-size:2rem;
+  font-weight:600;
+  color:#333;
+  text-align:center;
+  margin-bottom:0.5rem;
+}
+.auth-card p.subtitle {
+  font-size:1rem;
+  color:#666;
+  text-align:center;
+  margin-bottom:2rem;
+}
+
+/* 9. Input Groups */
+.input-group {
+  margin-bottom:1.75rem;
+  position: relative;
+}
+.input-group label {
+  display:block;
+  font-weight:500;
+  color:#444;
+  margin-bottom:0.4rem;
+}
+.input-group input {
+  width:100%;
+  padding:1rem 1.25rem;
+  border-radius:10px;
+  border:1px solid #ccc;
+  font-size:1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.input-group input:focus {
+  outline:none;
+  border-color:#0d6efd;
+  box-shadow:0 0 0 0.2rem rgba(13,110,253,0.25);
+}
+
+/* 10. Submit Button */
+.btn-submit {
+  width:100%;
+  padding:1rem;
+  font-size:1.1rem;
+  border:none;
+  border-radius:10px;
+  font-weight:600;
+  color:#fff;
+  background:#0d6efd;
+  transition: background 0.3s, transform 0.2s;
+}
+.btn-submit:hover {
+  background:#0b5ed7;
+  transform: translateY(-2px);
+}
+
+/* 11. Secondary Button */
+.btn-alt {
+  background:#198754;
+}
+.btn-alt:hover {
+  background:#157347;
+}
+
+/* 12. Footer Text */
+.text-sm {
+  font-size:0.9rem;
+  color:#555;
+  text-align:center;
+  margin-top:1.5rem;
+}
+.text-sm a {
+  color:#0d6efd;
+  text-decoration:none;
+}
+.text-sm a:hover {
+  text-decoration:underline;
+}
+
+/* 13. Minor Detail Underline */
+.auth-card h2:after {
+  content:"";
+  display:block;
+  width:60px;
+  height:3px;
+  background:#0d6efd;
+  margin:1rem auto 2rem;
+  border-radius:2px;
+}
+
+/* 14. Responsive Adjustments */
+@media(max-width:992px){
+  .auth-page { flex-direction:column; margin:1rem; }
+  .auth-image { display:none;}
+}

@@ -1,17 +1,19 @@
-
-
-// export default Card;
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
 export default function Card() {
-  const product = useSelector((state) => state.product.product); // assuming your state shape
+  const { id } = useParams(); // get the :id from the route
+  const productList = useSelector((state) => state.product.product); // redux product array
+  const product = productList.find((item) => item.id === parseInt(id)); // find specific product
+
+  if (!product) {
+    return <div className="container py-5">No product found for ID: {id}</div>;
+  }
 
   return (
     <div>
-      {product.map((info, index) => (
-        <Item key={index} info={info} />
-      ))}
+      <Item info={product} />
     </div>
   );
 }
@@ -38,11 +40,10 @@ function Item({ info }) {
 
           {/* Product Details */}
           <div className="col-md-6">
-            <br /><br /><br /><br />
             <h5 className="text-uppercase fw-bold">{info.Product_name}</h5>
             <h3 className="mb-3">{info.model}</h3>
             <p>{info.details}</p>
-            <h4 className="text-primary mt-4">€{info.price}</h4>
+            <h4 className="text-primary mt-4">${info.price}</h4>
             <button className="btn btn-dark px-4 py-2">BUY</button>
 
             {/* Contact Info */}

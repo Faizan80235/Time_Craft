@@ -140,7 +140,7 @@ const Recipt = () => {
 
           {/* Admin Dashboard button opening in new tab */}
         <Link
-  to="/index/Analytics/Sidebar/Dashboard"
+  to="/index/Analytics//Dashboard"
   target="_blank"
   rel="noopener noreferrer"
   className="btn btn-link text-white text-start d-flex align-items-center"

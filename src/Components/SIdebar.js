@@ -4,6 +4,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Chart from "./Chart"; // 👈 chart component import
 import AnalyticsCharts from "./Anayltics";
 import ProductManager from "./ProductManager";
+import { Link } from "react-router-dom";
 
 const navSections = [
   {
@@ -270,8 +271,8 @@ const Sidebar = () => {
               >
                 Admin User
               </p>
-              <a
-                href="#"
+              <Link
+                to="/index/Analytics/Sidebar/Dashboard"
                 style={{
                   fontSize: "0.9rem",
                   color: colors.accent,
@@ -286,7 +287,7 @@ const Sidebar = () => {
                 }
               >
                 Sign out
-              </a>
+              </Link>
             </div>
           )}
         </div>

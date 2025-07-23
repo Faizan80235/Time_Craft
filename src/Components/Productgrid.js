@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 export default function Productgrid() {
 const product = useSelector((state) => state.productgrids);
 console.log('Product array from redux:', product);
@@ -35,9 +35,13 @@ function Item({ info }) {
         <div className="card-body text-center">
           <h6 className="card-title fw-bold">{info.name}</h6>
           <p className="text-muted mb-2">{info.price}</p>
-          <a href="#" className="btn btn-outline-dark btn-sm">
-            View Details
-          </a>
+         <Link
+  to={`/details/${info.id}`}
+  className="btn btn-outline-dark btn-sm"
+>
+  View Details
+</Link>
+
         </div>
       </div>
     </div>
