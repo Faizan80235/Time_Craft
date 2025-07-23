@@ -46,7 +46,7 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link position-relative text-dark fw-semibold" href="/cart">
+              <Link className="nav-link position-relative text-dark fw-semibold" to="/Signup">
                 <i className="bi bi-cart3 fs-5"></i>
                 <span
                   className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
@@ -54,7 +54,7 @@ const Navbar = () => {
                 >
                   3
                 </span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
