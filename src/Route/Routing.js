@@ -9,6 +9,8 @@ import Signup from '../Pages/Signup'
 import Login from '../Pages/Login'
 import Recipt from "../Recipt _System/Recipt"
 import Card from "../Components/Card"
+import GridCard from '../Components/GridCard'
+import AddtoCard from '../Components/AddtoCart'
 export default function Routing() {
   return (
     <div>
@@ -21,6 +23,8 @@ export default function Routing() {
           <Route path='/Signup' element={<Signup />}></Route>
           <Route path='/Login' element={<Login></Login>}></Route>
         <Route path='/details/:id' element={<Card />} />
+        <Route path='/detail/:id' element={<GridCard></GridCard>} />
+        <Route path='/AddtoCart' element={<AddtoCard></AddtoCard>} />
 
           {/* Dashboard */}
           <Route path='/index/Analytics//Dashboard' element={<Sidebar></Sidebar>}></Route>

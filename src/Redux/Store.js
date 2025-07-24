@@ -6,8 +6,9 @@ import popularproductreducer from './data/Popularproductdata';
 import productgrid_reducer from './data/Productgrid';
 import Luxrydatareducer from './data/luxry';
 import Dashdatareducer from './data/DashData';
-
-import { productApi } from './Api/Api';
+import GridCardsReducer from './data/GridCardData'
+// import { productApi } from './Api/Api';
+import cartreducer from './data/AddtoCartData'
 
 const store = configureStore({
   reducer: {
@@ -17,12 +18,10 @@ const store = configureStore({
     productgrids: productgrid_reducer,
     Luxrydata: Luxrydatareducer,
     DashData: Dashdatareducer,
-
-    // Add RTK Query reducer
-    [productApi.reducerPath]: productApi.reducer,
+    GridCards:GridCardsReducer,
+    addtocart:cartreducer
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(productApi.middleware),
+ 
 });
 
 export default store;

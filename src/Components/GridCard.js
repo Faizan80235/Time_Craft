@@ -1,17 +1,13 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
-import { addtocart } from '../Redux/data/AddtoCartData';
-export default function Card() {
+export default function GridCard() {
   const { id } = useParams();
-  const productList = useSelector((state) => state.product.product);
+  const productList = useSelector((state) => state.GridCards);
   const product = productList.find((item) => item.id === parseInt(id));
-  const dispatch=useDispatch()
-  const HandelAddtoCart=()=>{
-    dispatch(addtocart(product))
-  }
+
   if (!product) {
     return <div className="container py-5">No product found for ID: {id}</div>;
   }
@@ -42,7 +38,7 @@ export default function Card() {
 
           {/* <h4 className="text-primary mb-3">${product.price}</h4> */}
 
-          <button className="btn btn-dark btn-lg px-4 py-2 mb-3" onClick={HandelAddtoCart}>Add to Cart</button>
+          <button className="btn btn-dark btn-lg px-4 py-2 mb-3">Buy Now</button>
 
           {/* Contact & Logistics Info */}
           <ul className="list-unstyled mt-3">

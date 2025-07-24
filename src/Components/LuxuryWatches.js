@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 export default function LuxryWatches() {
 const product = useSelector((state) => state.Luxrydata);
@@ -28,14 +29,15 @@ function Item({ info }) {
         <img
           src={info.image}
           className="card-img-top"
-          alt={info.name}
+          alt={info.Product_name}
         />
         <div className="card-body text-center">
-          <h6 className="card-title fw-bold">{info.name}</h6>
-          <p className="text-muted mb-2">{info.price}</p>
-          <a href="#" className="btn btn-outline-dark btn-sm">
-            View Details
-          </a>
+          <h6 className="card-title fw-bold">{info.Product_name}</h6>
+          <p className="text-muted mb-2">${info.price}</p>
+                 <Link
+            to={`/detail/${info.id}`}
+            className="btn btn-outline-dark btn-sm"
+          >View Details</Link>
         </div>
       </div>
     </div>
