@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className="bg-dark text-white pt-5 pb-4">
@@ -24,6 +24,10 @@ const Footer = () => {
               <li><a href="#" className="text-white text-decoration-none">Collections</a></li>
               <li><a href="#" className="text-white text-decoration-none">Luxury</a></li>
               <li><a href="#" className="text-white text-decoration-none">About</a></li>
+              <Link to="/privacy-policy" style={{ color: 'white',textDecoration:'none' }}>Privacy Policy</Link>
+              <br></br>
+<Link to="/return-policy" style={{ color: 'white',textDecoration:'none'}}>Return Policy</Link>
+
             </ul>
           </div>
 

@@ -12,6 +12,8 @@ import Card from "../Components/Card"
 import GridCard from '../Components/GridCard'
 import AddtoCard from '../Components/AddtoCart'
 import AppLayout from '../Components/AppLayout'
+import PrivacyPolicy from '../Components/PrivacyPolicy';
+import ReturnPolicy from '../Components/ReturnPolicy';
 export default function Routing() {
   return (
     <div>
@@ -27,6 +29,11 @@ export default function Routing() {
         <Route path='/details/:id' element={<Card />} />
         <Route path='/detail/:id' element={<GridCard></GridCard>} />
         <Route path='/AddtoCart' element={<AddtoCard></AddtoCard>} />
+
+
+// Inside your routes:
+<Route path="/privacy-policy" element={<PrivacyPolicy />} />
+<Route path="/return-policy" element={<ReturnPolicy />} />
 
           {/* Dashboard */}
           <Route path='/index/Analytics//Dashboard' element={<Sidebar></Sidebar>}></Route>
