@@ -7,9 +7,8 @@ import productgrid_reducer from './data/Productgrid';
 import Luxrydatareducer from './data/luxry';
 import Dashdatareducer from './data/DashData';
 import GridCardsReducer from './data/GridCardData'
-// import { productApi } from './Api/Api';
 import cartreducer from './data/AddtoCartData'
-
+import chatbotreducer from './data/chat'
 const store = configureStore({
   reducer: {
     product: productreducer,
@@ -19,7 +18,8 @@ const store = configureStore({
     Luxrydata: Luxrydatareducer,
     DashData: Dashdatareducer,
     GridCards:GridCardsReducer,
-    addtocart:cartreducer
+    addtocart:cartreducer,
+    chatbot:chatbotreducer
   },
  
 });

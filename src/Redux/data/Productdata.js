@@ -157,6 +157,7 @@ const initialState = {
       id: 1,
       Product_name: "Smartwatch X1 - Elite Edition with Advanced GPS Tracking, Comprehensive Health Monitoring, and Durable Sapphire Glass Display for the Ultimate Wearable Experience.",
       image_url: prod1,
+      price: '$4,200',
       contact: "+923161435800",
       description: "Boasts an impressive 7-day battery life with typical usage, extending to 14 days in power-saving mode. GPS tracking reduces battery to 12 hours, while continuous health monitoring provides up to 3 days.",
       charging_time: "1.5 hours for a full charge using magnetic fast charger.",

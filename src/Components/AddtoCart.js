@@ -30,13 +30,14 @@ const Cart = () => {
                   <h5 className="mb-1">{item.Product_name}</h5>
                   <p className="mb-1 text-muted small">{item.Description}</p>
                   <p className="mb-1 fst-italic text-secondary">{item.overview}</p>
-                  <small className="text-primary fw-semibold">Price: ${(item.price ?? 0).toFixed(2)}</small>
+                  <small className="text-primary fw-semibold">Price: {(item.price ?? 0)}</small>
                 </div>
               </div>
 
               <div className="d-flex flex-column align-items-end">
                 <span className="badge bg-primary rounded-pill mb-2">Qty: {item.quantity}</span>
-                <span className="fw-bold fs-5">${((item.price ?? 0) * item.quantity).toFixed(2)}</span>
+                <span className="fw-bold fs-5">${((item.price
+                ) * item.quantity)}</span>
               </div>
             </div>
           ))}

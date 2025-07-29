@@ -1,18 +1,19 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 export default function Productgrid() {
-const product = useSelector((state) => state.productgrids);
-console.log('Product array from redux:', product);
-const length=(product.length)
-console.log('Total products:', product.length);
+  const product = useSelector((state) => state.productgrids);
+  const length = product.length;
 
-
+  console.log('Product array from redux:', product);
+  console.log('Total products:', length);
 
   return (
     <div className="container py-5">
-      <h2 className="text-center fw-bold mb-5">Popular Timepieces</h2>
-      <h2 className="fw-bold mb-5">All Product({length})</h2>
+      <h2 className="text-center fw-bold mb-4">Popular Timepieces</h2>
+      <h4 className="fw-semibold mb-5">All Products ({length})</h4>
+      
       <div className="row g-4">
         {product.map((info, index) => (
           <Item key={index} info={info} />
@@ -24,24 +25,20 @@ console.log('Total products:', product.length);
 
 function Item({ info }) {
   return (
-    <div className="col-sm-6 col-lg-3 mb-4">
-      
-      <div className="product-card inward-effect h-100">
+    <div className="col-sm-6 col-lg-3">
+      <div className="card h-100 shadow-sm p-3 rounded bg-white">
         <img
           src={info.image}
-          className="card-img-top"
+          className="card-img-top img-fluid mb-3"
           alt={info.name}
+          style={{ objectFit: 'cover', height: '200px', borderRadius: '0.5rem' }}
         />
-        <div className="card-body text-center">
-          <h6 className="card-title fw-bold">{info.name}</h6>
-          <p className="text-muted mb-2">{info.price}</p>
-         <Link
-  to={`/details/${info.id}`}
-  className="btn btn-outline-dark btn-sm"
->
-  View Details
-</Link>
-
+        <div className="card-body text-center px-2">
+          <h6 className="card-title fw-bold mb-2">{info.name}</h6>
+          <p className="text-muted mb-3">{info.price}</p>
+          <Link to={`/details/${info.id}`} className="btn btn-outline-dark btn-sm">
+            View Details
+          </Link>
         </div>
       </div>
     </div>

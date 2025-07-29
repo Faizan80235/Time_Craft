@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const navi = useSelector(state => state.link);
-  const cart=useSelector((state)=>state.addtocart)
-  const length=cart.length;
+  const cart = useSelector(state => state.addtocart);
+  const length = cart.length;
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
       <div className="container">

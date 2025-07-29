@@ -11,10 +11,12 @@ import Recipt from "../Recipt _System/Recipt"
 import Card from "../Components/Card"
 import GridCard from '../Components/GridCard'
 import AddtoCard from '../Components/AddtoCart'
+import AppLayout from '../Components/AppLayout'
 export default function Routing() {
   return (
     <div>
       <BrowserRouter>
+      <AppLayout></AppLayout>
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/About' element={<About />}></Route>
