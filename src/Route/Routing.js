@@ -14,11 +14,12 @@ import AddtoCard from '../Components/AddtoCart'
 import AppLayout from '../Components/AppLayout'
 import PrivacyPolicy from '../Components/PrivacyPolicy';
 import ReturnPolicy from '../Components/ReturnPolicy';
+import ProductManager from '../Components/ProductManager'
 export default function Routing() {
   return (
     <div>
       <BrowserRouter>
-      <AppLayout></AppLayout>
+        <AppLayout></AppLayout>
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/About' element={<About />}></Route>
@@ -26,14 +27,15 @@ export default function Routing() {
           <Route path='/Collection/Luxry' element={<Luxries></Luxries>}></Route>
           <Route path='/Signup' element={<Signup />}></Route>
           <Route path='/Login' element={<Login></Login>}></Route>
-        <Route path='/details/:id' element={<Card />} />
-        <Route path='/detail/:id' element={<GridCard></GridCard>} />
-        <Route path='/AddtoCart' element={<AddtoCard></AddtoCard>} />
+          <Route path='/details/:id' element={<Card />} />
+          <Route path='/detail/:id' element={<GridCard></GridCard>} />
+          <Route path='/Product/:id' element={<ProductManager></ProductManager>} />
+          <Route path='/AddtoCart' element={<AddtoCard></AddtoCard>} />
 
 
 // Inside your routes:
-<Route path="/privacy-policy" element={<PrivacyPolicy />} />
-<Route path="/return-policy" element={<ReturnPolicy />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/return-policy" element={<ReturnPolicy />} />
 
           {/* Dashboard */}
           <Route path='/index/Analytics//Dashboard' element={<Sidebar></Sidebar>}></Route>
