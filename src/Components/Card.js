@@ -48,11 +48,19 @@ export default function Card() {
 
             <p className="text-secondary mb-3">{product.overview}</p>
 
+            {/* Add to Cart and Buy Buttons */}
             <button
-              className="btn btn-dark btn-lg px-4 py-2 mb-3"
+              className="btn btn-dark btn-lg px-4 py-2 mb-3 me-3"
               onClick={handleAddToCart}
             >
               Add to Cart
+            </button>
+
+            <button
+              className="btn btn-primary btn-lg px-4 py-2 mb-3"
+              onClick={() => alert(`Proceeding to buy ${product.Product_name}`)}
+            >
+              Buy
             </button>
 
             {/* Contact & Logistics Info */}
