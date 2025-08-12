@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   const navi = useSelector(state => state.link);
   const cart = useSelector(state => state.addtocart);
-  const user = useSelector(state => state.user); // Assuming user data is stored here
-  const length = cart.length;
+  const user = useSelector(state => state.user);
+  const length = cart?.length || 0;
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
@@ -30,7 +30,6 @@ const Navbar = () => {
 
         <div className="collapse navbar-collapse justify-content-end" id="navMenu">
           <ul className="navbar-nav align-items-center gap-3">
-
             <li className="nav-item">
               <Link className="nav-link text-dark fw-semibold" to="/">{navi.Home}</Link>
             </li>
@@ -53,7 +52,7 @@ const Navbar = () => {
               </Link>
             </li>
 
-            {/* Dropdown for User */}
+            {/* User Dropdown */}
             <li className="nav-item dropdown">
               <span
                 className="nav-link dropdown-toggle text-dark fw-semibold"
@@ -63,7 +62,7 @@ const Navbar = () => {
                 aria-expanded="false"
               >
                 <i className="bi bi-person-circle fs-5"></i>{' '}
-                {user?.username || 'Account'}
+                {user ? user.username : 'Account'}
               </span>
               <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                 {!user ? (
@@ -73,13 +72,13 @@ const Navbar = () => {
                   </>
                 ) : (
                   <>
-                    <li><Link className="dropdown-item" to="/profile">Profile</Link></li>
+                    <li><Link className="dropdown-item" to="/dashboard">Dashboard</Link></li>
+                    <li><Link className="dropdown-item" to="/profile/edit">Edit Profile</Link></li>
                     <li><Link className="dropdown-item" to="/logout">Logout</Link></li>
                   </>
                 )}
               </ul>
             </li>
-
           </ul>
         </div>
       </div>

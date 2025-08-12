@@ -9,6 +9,7 @@ import Dashdatareducer from './data/DashData';
 import GridCardsReducer from './data/GridCardData'
 import cartreducer from './data/AddtoCartData'
 import chatbotreducer from './data/chat'
+import userreducer from './Apis/UserApi'
 const store = configureStore({
   reducer: {
     product: productreducer,
@@ -19,7 +20,8 @@ const store = configureStore({
     DashData: Dashdatareducer,
     GridCards:GridCardsReducer,
     addtocart:cartreducer,
-    chatbot:chatbotreducer
+    chatbot:chatbotreducer,
+    user:userreducer
   },
  
 });
